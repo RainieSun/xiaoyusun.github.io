@@ -15,17 +15,17 @@
 :root{
   --bg:#ffffff;
   --card:#ffffff;
-  --text:#0f172a;
-  --muted:#475569;
+  --text:#020617;    /* darker navy/black */
+  --muted:#1f2937;   /* darker gray for abstracts */
   --border:#e2e8f0;
   --accent:#2563eb;
   --accent2:#0ea5e9;
-  --shadow: 0 10px 25px rgba(2,6,23,0.08);
+  --shadow: 0 14px 32px rgba(2,6,23,0.12);
   
   /* Top theme colors (light green/blue) */
-  --top1: rgba(34,197,94,0.14);   /* green */
-  --top2: rgba(59,130,246,0.14);  /* blue */
-  --top3: rgba(20,184,166,0.10);  /* teal */
+  --top1: rgba(34,197,94,0.25);   /* stronger green */
+  --top2: rgba(59,130,246,0.25);  /* stronger blue */
+  --top3: rgba(20,184,166,0.20);  /* stronger teal */
 
 }
 
@@ -191,8 +191,10 @@ a:hover{text-decoration:underline}
 }
 .entry-text{
   margin: 8px 0 0;
-  color: var(--muted);
+  color: #1f2937;
   font-size: 0.97rem;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 footer{
@@ -264,7 +266,6 @@ footer{
     <div class="entry">
       <div class="entry-title">Factor Investing in Corporate Bond Mutual Funds</div>
       <div class="entry-meta"><em>Job Market Paper</em></div>
-      </div>
       <p class="entry-text"><strong>Abstract:</strong> “Despite the widely recognized importance of factors in asset pricing and the rapid growth of factor investing, we know little about how 
         factors operate in the corporate bond market. Using detailed portfolio holdings for US corporate bond mutual funds, I provide novel evidence on their factor exposures and link them to
         performance at both the bond-holding and fund levels. I show that funds generally tilt their portfolios against well-known academic factors, and these contrarian tilts are highly 
