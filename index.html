@@ -20,22 +20,35 @@
   --accent:#2563eb;
   --accent2:#0ea5e9;
   --shadow: 0 10px 25px rgba(2,6,23,0.08);
+  
+  /* Top theme colors (light green/blue) */
+  --top1: rgba(34,197,94,0.14);   /* green */
+  --top2: rgba(59,130,246,0.14);  /* blue */
+  --top3: rgba(20,184,166,0.10);  /* teal */
+
 }
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+  
 body{
   margin:0;
-  font-family:Inter, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
-  color:var(--text);
-  background: radial-gradient(1000px 600px at 10% -10%, rgba(37,99,235,0.10), transparent 60%),
-              radial-gradient(900px 500px at 90% 0%, rgba(14,165,233,0.10), transparent 55%),
-              var(--bg);
-  line-height:1.65;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.65;
 }
 
 a{color:var(--accent); text-decoration:none}
 a:hover{text-decoration:underline}
+
+.top-bg{
+  background:
+    radial-gradient(1000px 520px at 10% 0%, var(--top1), transparent 60%),
+    radial-gradient(900px 520px at 90% 0%, var(--top2), transparent 55%),
+    radial-gradient(850px 520px at 55% -10%, var(--top3), transparent 60%);
+    border-bottom: 1px solid var(--border);
+}
 
 .container{
   max-width: 980px;
@@ -43,45 +56,35 @@ a:hover{text-decoration:underline}
   padding: 28px 18px 60px;
 }
 
-.topbar{
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  backdrop-filter: blur(12px);
-  background: rgba(255,255,255,0.72);
-  border-bottom: 1px solid var(--border);
-}
-
-.topbar-inner{
-  max-width:980px;
-  margin:0 auto;
-  padding: 12px 18px;
+    /* Nav */
+.nav{
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap: 12px;
+  flex-wrap: wrap;
+  padding: 10px 0 14px;
 }
 
 .brand{
-  font-weight:700;
+  font-weight:800;
   letter-spacing:-0.02em;
 }
 
-.nav a{
+.navlinks a{
   margin-left: 14px;
-  font-weight:500;
+  font-weight: 600;
   color: var(--muted);
+  padding: 6px 8px;
+  border-radius: 10px;
 }
-.nav a:hover{color: var(--text); text-decoration:none}
-
-.hero{
-  margin-top: 20px;
-  display:grid;
-  grid-template-columns: 1.8fr 1fr;
-  gap: 22px;
-  align-items:start;
+.navlinks a:hover{
+  color: var(--text);
+  text-decoration:none;
+  background: rgba(148,163,184,0.18);
 }
 
+  
 .card{
   background: var(--card);
   border: 1px solid var(--border);
@@ -89,30 +92,35 @@ a:hover{text-decoration:underline}
   box-shadow: var(--shadow);
 }
 
-.hero-card{
-  padding: 22px 22px 18px;
-}
 
-.hero h1{
+    /* Hero layout */
+.hero{
+  display:grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 18px;
+  align-items: stretch;
+  padding: 10px 0 22px;
+}
+.hero-main{ padding: 18px 18px 16px; }
+.hero-main h1{
   margin: 0 0 6px;
-  font-size: 2.2rem;
+  font-size: 2.05rem;
   letter-spacing: -0.03em;
 }
-.role{
+.hero-main .role{
   margin: 0 0 10px;
   color: var(--muted);
-  font-weight: 500;
+  font-weight: 600;
 }
 .badge{
   display:inline-flex;
   align-items:center;
-  gap:8px;
   padding: 6px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(37,99,235,0.25);
-  background: rgba(37,99,235,0.08);
-  color: var(--accent);
-  font-weight: 600;
+  border: 1px solid rgba(34,197,94,0.28);
+  background: rgba(34,197,94,0.10);
+  color: #166534;
+  font-weight: 800;
   font-size: 0.92rem;
 }
 .links{
@@ -122,51 +130,65 @@ a:hover{text-decoration:underline}
   gap: 10px 14px;
   color: var(--muted);
 }
-.links a{font-weight:600}
+.links a{ font-weight: 700; }
 
-.side-card{
-  padding: 18px;
+.hero-side{
+  padding: 16px;
+  display:flex;
+  flex-direction: column;
+  gap: 10px;
 }
-.side-card h3{
-  margin: 0 0 10px;
-  font-size: 1.05rem;
+.photo{
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  background: #f1f5f9;
+}
+.side-title{
+  margin: 2px 0 0;
+  font-weight: 800;
+  letter-spacing: -0.01em;
 }
 .kv{
-  margin: 10px 0 0;
+  margin: 0;
   color: var(--muted);
   font-size: 0.96rem;
 }
-.kv strong{color: var(--text)}
+.kv strong{ color: var(--text); }
 
-.section{
-  margin-top: 26px;
-}
+/* Sections */
+.section{ margin-top: 26px; }
 .section h2{
   margin: 0 0 12px;
   font-size: 1.3rem;
   letter-spacing: -0.02em;
 }
-.paper{
+
+/* “Paper-style” blocks used for Research + Teaching */
+.entry{
   padding: 16px 16px 14px;
   border-radius: 14px;
   border: 1px solid var(--border);
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.92);
   margin-bottom: 12px;
 }
-.paper-title{
-  font-weight: 700;
+.entry-title{
+  font-weight: 800;
   margin: 0 0 4px;
+  letter-spacing: -0.01em;
 }
-.paper-meta{
+.entry-meta{
   margin: 0 0 8px;
   color: var(--muted);
   font-size: 0.95rem;
 }
-.paper-links a{
+.entry-links a{
   margin-right: 10px;
-  font-weight: 600;
+  font-weight: 800;
 }
-.abstract{
+.entry-text{
   margin: 8px 0 0;
   color: var(--muted);
   font-size: 0.97rem;
@@ -180,34 +202,30 @@ footer{
   font-size: 0.92rem;
 }
 
-/* Mobile */
 @media (max-width: 860px){
-  .hero{grid-template-columns:1fr}
-  .topbar-inner{flex-wrap:wrap}
-  .nav a{margin-left:0; margin-right:14px}
+  .hero{ grid-template-columns: 1fr; }
+  .navlinks a{ margin-left: 0; margin-right: 14px; }
 }
 </style>
 </head>
 
-
 <body>
+  <!-- Top themed area -->
+  <div class="top-bg">
+    <div class="container">
 
-<div class="topbar">
-  <div class="topbar-inner">
-    <div class="brand">Xiaoyu Sun</div>
-    <div class="nav">
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
-      <a href="#teaching">Teaching</a>
-      <a href="CV_XiaoyuSun.pdf">CV</a>
-    </div>
-  </div>
-</div>
-
-<div class="container">
+      <div class="nav">
+        <div class="brand">Xiaoyu Sun</div>
+        <div class="navlinks">
+          <a href="#about">About</a>
+          <a href="#research">Research</a>
+          <a href="#teaching">Teaching</a>
+          <a href="CV_XiaoyuSun.pdf">CV</a>
+        </div>
+      </div>
 
   <div class="hero">
-    <div class="card hero-card">
+    <div class="card hero-main">
       <h1>Xiaoyu Sun</h1>
       <p class="role">PhD Candidate in Management-Finance, Telfer School of Management, University of Ottawa</p>
 
@@ -226,21 +244,26 @@ footer{
     </div>
 
     <div class="card side-card">
-      <h3>Contact</h3>
-      <p class="kv"><strong>Email:</strong> <a href="mailto:xsun052@uottawa.ca">xsun052@uottawa.ca</a></p>
-      <p class="kv"><strong>Affiliation:</strong> Telfer School of Management, University of Ottawa</p>
-      <p class="kv"><strong>Fields:</strong> Empiricial Asset Pricing, Mutual Funds, Sustainable Finance</p>
-      <p class="kv"><strong>CV:</strong> <a href="CV_XiaoyuSun.pdf">CV_XiaoyuSun.pdf</a></p>
+        <!-- Upload headshot.jpg to the repo root (same level as index.html) -->
+      <img class="photo" src="headshot.jpg" alt="Headshot (upload headshot.jpg)">
 
-      <!-- Optional photo: upload headshot.jpg then uncomment -->
-      <!-- <img src="headshot.jpg" alt="Headshot" style="width:100%; border-radius:14px; margin-top:14px; border:1px solid var(--border);"> -->
+      <div class="side-title">Contact</div>
+          <p class="kv"><strong>Email:</strong> <a href="mailto:xsun052@uottawa.ca">xsun052@uottawa.ca</a></p>
+          <p class="kv"><strong>Affiliation:</strong> Telfer School of Management, University of Ottawa</p>
+          <p class="kv"><strong>Fields:</strong> Empirical Asset Pricing, Mutual Funds, Sustainable Finance</p>
+        </div>
+      </div>
+
     </div>
   </div>
 
+   <!-- Main content -->
+  <div class="container">
+
   <div class="section" id="about">
     <h2>About</h2>
-    <div class="paper">
-      <div class="abstract" style="margin-top:0;">
+    <div class="entry">
+      <div class="entry-text" style="margin-top:0;">
         Welcome to my website! I am a PhD candidate in Management with a concentration in Finance at the Telfer School of Management, University of Ottawa. My research focuses on ESG, 
         Climate Finance, Biodiversity Finance, Mutual Funds, Institutional Investors, Retail Investors, Corporate Bonds, Empirical Asset Pricing
       </div>
@@ -250,11 +273,11 @@ footer{
   <div class="section" id="research">
     <h2>Research</h2>
 
-    <div class="paper">
-      <div class="paper-title">Factor Investing in Corporate Bond Mutual Funds</div>
-      <div class="paper-meta"><em>Job Market Paper</em></div>
+    <div class="entry">
+      <div class="entry-title">Factor Investing in Corporate Bond Mutual Funds</div>
+      <div class="entry-meta"><em>Job Market Paper</em></div>
       </div>
-      <p class="abstract"><strong>Abstract:</strong> “Despite the widely recognized importance of factors in asset pricing and the rapid growth of factor investing, we know little about how 
+      <p class="entry-text"><strong>Abstract:</strong> “Despite the widely recognized importance of factors in asset pricing and the rapid growth of factor investing, we know little about how 
         factors operate in the corporate bond market. Using detailed portfolio holdings for US corporate bond mutual funds, I provide novel evidence on their factor exposures and link them to
         performance at both the bond-holding and fund levels. I show that funds generally tilt their portfolios against well-known academic factors, and these contrarian tilts are highly 
         persistent. This behavior may reflect the limited presence of factor premia in the bond market. However, using holdings-based fund returns, I find positive premia for the bond-traded 
@@ -264,13 +287,13 @@ footer{
         indicate that the practical value of factor investing in the bond market is limited and often eroded by the costs associated with liquidity management and heterogeneous asset allocations.”</p>
     </div>
 
-    <div class="paper">
-      <div class="paper-title">Mutual Fund Tournament and ESG Ratings</div>
-      <div class="paper-meta"><em>with Fabio Moneta</em></div>
-      <div class="paper-links">
+    <div class="entry">
+      <div class="entry-title">Mutual Fund Tournament and ESG Ratings</div>
+      <div class="entry-meta"><em>with Fabio Moneta</em></div>
+      <div class="entry-links">
         <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5619190">SSRN</a>
       </div>
-      <p class="abstract"><strong>Abstract:</strong> “We document a novel form of tournament behavior based on ESG: U.S. equity growth fund managers use Morningstar’s ESG Risk Ratings 
+      <p class="entry-text"><strong>Abstract:</strong> “We document a novel form of tournament behavior based on ESG: U.S. equity growth fund managers use Morningstar’s ESG Risk Ratings 
         (measured by a five-globe system) as a competitive tool to attract investor flows. We provide evidence of a causal link between past performance and ESG tilts: funds that 
         underperform early in the year strategically rebalance toward higher-rated ESG stocks and sell non-ESG stocks to improve their sustainability ratings by year-end. These portfolio
         tilts do not enhance financial returns or environmental outcomes, yet investors reward them: underperforming funds that succeed in raising their globe ratings experience smaller
@@ -278,10 +301,10 @@ footer{
         ethical concerns that such ESG tilts may reflect agency-driven incentives rather than a genuine commitment to investors’ interests or sustainable impact.”</p>
     </div>
 
-    <div class="paper">
-      <div class="paper-title">Retail Investor and Stock Return Predictability</div>
-      <div class="paper-meta"><em>with Fabio Moneta</em></div>
-      <p class="abstract"><strong>Abstract:</strong> “Inspired by the influential work of Boehmer, Jones, Zhang, and Zhang (2021), we re-examine the predictability of retail order flow for 
+    <div class="entry">
+      <div class="entry-title">Retail Investor and Stock Return Predictability</div>
+      <div class="entry-meta"><em>with Fabio Moneta</em></div>
+      <p class="entry-text"><strong>Abstract:</strong> “Inspired by the influential work of Boehmer, Jones, Zhang, and Zhang (2021), we re-examine the predictability of retail order flow for 
         stock returns using a novel and more accurate retail trading database (VandaTrack) over an extended sample period from 2014 to 2022. We find that the predictability of retail trading
         persists for up to five weeks from 2014 to 2016, a window that overlaps with Boehmer et al., but is absent out of sample from 2017 to 2022. The predictability observed in 2014-2016 
         is concentrated in small stocks when buying strongly dominates selling. The predictability for small stocks is seriously weakened because of the improvement in liquidity in the later
@@ -292,17 +315,21 @@ footer{
 
   <div class="section" id="teaching">
     <h2>Teaching</h2>
-    <div class="paper">
-      <ul style="margin:0; padding-left:18px;">
-        <li>Part-time Professor — ADM3351 Fixed-Income Investment 2024 Winter</li>
-        <li>Part-time Professor — ADM3351 Fixed-Income Investment 2025 Fall</li>
-        <li>Part-time Professor — ADM3352 Portfolio Management 2026 Winter</li>
-        <li>Teaching Assistant(2021 - 2025): Corporate Finance, International Business, 
-          Finance Theory, Financial Management, Operation Management, Portfolio Management, Multinational Business Finance, Statistics Management, Mathematics for Business.</li>
-      </ul>
-    </div>
-  </div>
-
+    <div class="entry">
+     <div class="entry-title">Part-time Professor — ADM3351 Fixed-Income Investments</div>
+        <div class="entry-meta">Telfer School of Management · (Winter/2024)</div>
+      </div>
+    
+  <div class="entry">
+     <div class="entry-title">Part-time Professor — ADM3351 Fixed-Income Investments</div>
+        <div class="entry-meta">Telfer School of Management · (Fall/2025)</div>
+      </div>
+    
+  <div class="entry">
+     <div class="entry-title">Part-time Professor — ADM3352 Portfolio Management</div>
+        <div class="entry-meta">Telfer School of Management · (Winter/2026)</div>
+      </div>
+    
   <footer>
     Last updated: January 2026.
   </footer>
