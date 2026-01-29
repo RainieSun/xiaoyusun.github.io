@@ -3,33 +3,95 @@
 <head>
 <meta charset="utf-8">
 <title>Xiaoyu Sun</title>
+<img src="photo2_Xiaoyu Sun.jpg" width="150">
 
 <style>
 body {
-  max-width: 900px;
+  max-width: 950px;
   margin: auto;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
+  padding: 20px;
 }
 
-nav a {
-  margin-right: 15px;
+.header {
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+  margin-bottom: 10px;
 }
 
-h1 { margin-bottom: 0; }
+.photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+.nameblock h1 { margin: 0; }
+.nameblock p { margin: 6px 0; }
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border: 1px solid #999;
+  border-radius: 999px;
+  font-size: 0.9em;
+}
+
+nav {
+  margin: 18px 0 24px 0;
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+nav a { margin-right: 14px; }
+
+h2 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 6px;
+  margin-top: 28px;
+}
+
+.paper {
+  margin-bottom: 18px;
+}
+
+.paper p {
+  margin: 6px 0 0 0;
+}
+
+footer {
+  margin-top: 40px;
+  padding-top: 14px;
+  border-top: 1px solid #ddd;
+  color: #666;
+  font-size: 0.9em;
+}
 </style>
+
 </head>
 
 <body>
+<div class="header">
 
-<h1>Xiaoyu Sun</h1>
-<p><strong>PhD Candidate in Management, Finance, Telfer School of Management, University of Ottawa</strong></p>
+  <div class="nameblock">
+    <h1>Xiaoyu Sun</h1>
+    <p><strong>PhD Candidate in Management-Finance, Telfer School of Management, University of Ottawa</strong></p>
+    <p><span class="badge">Job Market 2025–2026</span></p>
+
+    <p>
+      <a href="mailto:xsun052@uottawa.ca">YOUR_EMAIL@uottawa.ca</a> |
+      <a href="CV_XiaoyuSun.pdf">CV (PDF)</a> |
+    </p>
+  </div>
+</div>
 
 <nav>
-<a href="CV_XiaoyuSun.pdf">CV</a>
-<a href="#research">Research</a>
-<a href="#teaching">Teaching</a>
-<a href="mailto:xsun052@uottawa.ca">Email</a>
+  <a href="#research">Research</a>
+  <a href="#teaching">Teaching</a>
 </nav>
 
 <p>
@@ -43,26 +105,68 @@ My research focuses on ESG, Climate Finance, Biodiversity Finance, Mutual Funds,
 
 <h2 id="research">Research</h2>
 
+<h3>Working Papers</h3>
+
 <ul>
 <li>
-<strong>Job Market Paper:</strong> Retail Trading and Asset Prices
+<strong>Factor Investing in Corporate Bond Mutual Funds</strong><br>
+<em>Job Market Paper</em><br>
+<p>
+Abstract: “Despite the widely recognized importance of factors in asset pricing and the rapid growth of factor investing, we know little about how factors operate 
+  in the corporate bond market. Using detailed portfolio holdings for US corporate bond mutual funds, I provide novel evidence on their factor exposures and link 
+  them to performance at both the bond-holding and fund levels. I show that funds generally tilt their portfolios against well-known academic factors, and these 
+  contrarian tilts are highly persistent. This behavior may reflect the limited presence of factor premia in the bond market. However, using holdings-based fund 
+  returns, I find positive premia for the bond-traded liquidity factor in the full sample. Additionally, bond momentum and duration deliver negative premia, credit
+  risk earns positive premia in investment-grade fund holdings, and stock momentum generates positive premia in high-yield fund holdings. Despite these factor premia, 
+  funds that tilt toward the factors underperform peers that tilt against them. Implementation frictions and heterogenous asset allocations, such as cash, Treasuries, 
+  and Rule 144A bonds, significantly offset the benefits of factor tilts at the fund level. Overall, these findings indicate that the practical value of factor investing
+  in the bond market is limited and often eroded by the costs associated with liquidity management and heterogeneous asset allocations.”
+</p>
+</li>
+<li>
+<strong>Mutual Fund Tournament and ESG Ratings</strong>
+<em>with Fabio Moneta </em><br>
+<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5619190">SSRN</a>
+<p>
+Abstract: “We document a novel form of tournament behavior based on ESG: U.S. equity growth fund managers use Morningstar’s ESG Risk Ratings (measured by a five-globe system)
+  as a competitive tool to attract investor flows. We provide evidence of a causal link between past performance and ESG tilts: funds that underperform early in the year 
+  strategically rebalance toward higher-rated ESG stocks and sell non-ESG stocks to improve their sustainability ratings by year-end. These portfolio tilts do not enhance 
+  financial returns or environmental outcomes, yet investors reward them: underperforming funds that succeed in raising their globe ratings experience smaller outflows than
+  those that do not. A similar pattern emerges among European growth funds, though the tournament centers on Morningstar’s Low Carbon Designation. Our findings raise ethical
+  concerns that such ESG tilts may reflect agency-driven incentives rather than a genuine commitment to investors’ interests or sustainable impact.”
+</p>
+  
 </li>
 
 <li>
-Factor Exposures in Corporate Bond Mutual Funds
-</li>
-
-<li>
-Biodiversity Regulation Risk and Firm Valuation (work in progress)
+<strong>Retail Investor and Stock Return Predictability</strong><br>
+<em>with Fabio Moneta </em><br>
+<p>
+Abstract: “Inspired by the influential work of Boehmer, Jones, Zhang, and Zhang (2021), we re-examine the predictability of retail order flow for stock returns using a novel
+  and more accurate retail trading database (VandaTrack) over an extended sample period from 2014 to 2022. We find that the predictability of retail trading persists for up 
+  to five weeks from 2014 to 2016, a window that overlaps with Boehmer et al., but is absent out of sample from 2017 to 2022. The predictability observed in 2014-2016 is 
+  concentrated in small stocks when buying strongly dominates selling. The predictability for small stocks is seriously weakened because of the improvement in liquidity in 
+  the later period. Once we exclude small stocks with low liquidity, the remaining retail order flow lose predictability even in 2014-2016. This paper provides evidence that
+  liquidity is an important factor explaining the decline in predictability of retail trading rather than informed trading.”
+</p>
+  
 </li>
 </ul>
+
+<h3>Research Interests</h3>
+
+<ul>
+<li>Sustainable Finance</li>
+<li>Mutual Funds</li>
+<li>Retail Trading</li>
+<li>Empirical Asset Pricing</li>
+</ul>
+
 
 <h2 id="teaching">Teaching</h2>
 
 <ul>
-<li>Teaching Assistant — Investments</li>
-<li>Teaching Assistant — Corporate Finance</li>
-<li>Teaching Assistant — Financial Econometrics</li>
+<li>Part-time Professor — ADM3351 Fixed-Income Investments, ADM3352 Portoflio Management</li>
 </ul>
 
 </body>
